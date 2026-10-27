@@ -1,0 +1,47 @@
+`timescale 1ns/1ps // Unidad de tiempo / precisión (solo la usa el simulador)
+
+
+module Ejercicio_1_FPGA(
+    parameter CLK_FREQ        = 50_000_000, // Frecuencia del reloj de la tarjeta en Hz 
+    parameter TIEMPO_MS       = 500,        // Cada cuántos milisegundos cambia el LED (reemplaza al #10 del código base)
+    parameter N_CAMBIOS       = 30,         // Cuántas veces cambia el LED (reemplaza al repeat(30))
+    parameter RST_ACTIVO_BAJO = 1           // 1 si tu botón da 0 al presionarlo (DE10-Lite, DE0-Nano)
+                                            // 0 si tu botón da 1 al presionarlo (Basys 3, Nexys)
+)(
+    input  wire clk,  // Reloj real de la tarjeta (sale del oscilador de cristal)
+    input  wire rst,  // Botón para volver a empezar
+    output reg  led   // LED donde se ve la señal
+);
+
+    // Cuántos pulsos del reloj hay que contar para que pasen TIEMPO_MS milisegundos
+    // (se resta 1 porque el contador empieza en 0)
+    localparam integer CUENTA_MAX = (CLK_FREQ / 1000) * TIEMPO_MS - 1;
+
+    // Adapta el botón para que "reinicio = 1" signifique "botón presionado" en cualquier tarjeta
+    wire reinicio = RST_ACTIVO_BAJO ? ~rst : rst;
+
+    reg [31:0] contador = 32'd0; // Cuenta pulsos del reloj (reemplaza al #10)
+    reg [5:0]  cambios  = 6'd0;  // Cuenta cuántas veces ha cambiado el LED (reemplaza al repeat)
+
+    initial led = 1'b0; // Valor con el que arranca el LED al programar la FPGA (como clock = 1'b0)
+
+    always @(posedge clk) begin               // Se ejecuta en cada flanco de subida del reloj
+        if (reinicio) begin                   // Si se presiona el botón: todo vuelve al inicio
+            contador <= 32'd0;
+            cambios  <= 6'd0;
+            led      <= 1'b0;
+        end
+        else if (cambios < N_CAMBIOS) begin   // Mientras no se hayan hecho los 30 cambios...
+            if (contador == CUENTA_MAX) begin // ...y si ya pasó el tiempo:
+                contador <= 32'd0;            // reinicia el conteo de tiempo
+                led      <= ~led;             // invierte el LED (como clock = ~clock)
+                cambios  <= cambios + 1'b1;   // suma un cambio
+            end
+            else begin
+                contador <= contador + 1'b1;  // si aún no pasa el tiempo, sigue contando
+            end
+        end
+        // Cuando cambios llega a 30 ya no entra a nada: el LED se queda quieto (apagado)
+    end
+
+endmodule

@@ -1,0 +1,21 @@
+//Descripción de un latch D 
+
+//   - Si el control= 1, salida copia a la entrada (modo transparente).
+//   - Si el control= 0, salida guarda el último valor (modo memoria).
+
+module Ejercicio_3 (oQ, iD, icontrol); 
+			output oQ; 				// oQ= LED 
+			input iD, icontrol; 	// iD es la entrada de DATO e icontrol la de CONTROL= switches
+			reg oQ; 				// oQ = "reg": puede conservar su valor hasta que se le asigne uno nuevo
+		
+			always @ (icontrol or iD) 	
+					if (icontrol) oQ = iD;			 
+					// Si icontrol vale 1: oQ toma el valor de iD (la salida copia al dato)
+					// Si icontrol vale 0: como no hay "else", nadie cambia a oQ, así que se queda con su último valor. 
+endmodule							
+
+
+
+
+
+

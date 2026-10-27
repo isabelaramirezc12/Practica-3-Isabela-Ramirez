@@ -1,0 +1,10 @@
+module Ejercicio_1
+
+initial // Indica que solo se ejecuta una vez el algoritmo
+ begin //inicia
+    clock = 1'b0; // inicia la señal en cero y con un bit de ancho
+    repeat (30) // repetición de 30 veces
+        #10 clock = ~clock; // cada 10 unidades de tiempo cambia el valor de la señal invirtiendola
+end
+
+endmodule

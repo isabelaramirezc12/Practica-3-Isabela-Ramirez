@@ -1,0 +1,8 @@
+C:/Practica-3-Isabela-Ramirez/Ejercicio_2/Ejercicio_2.v {1 {vlog -work work C:/Practica-3-Isabela-Ramirez/Ejercicio_2/Ejercicio_2.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Ejercicio_2
+
+Top level modules:
+	Ejercicio_2
+
+} {} {}}

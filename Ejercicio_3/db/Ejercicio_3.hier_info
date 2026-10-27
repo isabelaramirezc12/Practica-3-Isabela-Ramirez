@@ -1,0 +1,6 @@
+|Ejercicio_3
+oQ << oQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+iD => oQ$latch.DATAIN
+icontrol => oQ$latch.LATCH_ENABLE
+
+
