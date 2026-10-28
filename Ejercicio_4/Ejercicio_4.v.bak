@@ -1,0 +1,15 @@
+//Descripción de un Flip-flop D 
+// Memoria de 1 bit que copia la entrada SOLO cuando el reloj sube de 0 a 1 (flanco de subida).
+// en flanco de bajada se guarda el último valor, aunque la entrada cambie.
+
+module Ejercicio_4 (oQ, iD, iCLK); 	
+	output oQ; 				// oQ = LED
+	input iD, iCLK; 		// iD es la entrada de DATO e iCLK la de RELOJ =switches
+	reg oQ; 				// oQ = "reg": puede conservar su valor hasta que se le asigne uno nuevo
+	
+	always @ (posedge iCLK) 
+							
+// posedge = flanco de subida, oQ toma el valor de iD, en flanco de bajada nadie cambia a oQ, así que guarda su último valor.
+			oQ = iD; 		
+							
+endmodule			
