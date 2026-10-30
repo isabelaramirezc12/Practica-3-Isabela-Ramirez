@@ -49,7 +49,22 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name VERILOG_FILE Ejercicio_15.v
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_M9 -to CLK
+set_location_assignment PIN_U7 -to RST
+set_location_assignment PIN_AA2 -to INIlisto
+set_location_assignment PIN_N16 -to DATOS[0]
+set_location_assignment PIN_B16 -to DATOS[1]
+set_location_assignment PIN_M16 -to DATOS[2]
+set_location_assignment PIN_C16 -to DATOS[3]
+set_location_assignment PIN_D17 -to DATOS[4]
+set_location_assignment PIN_K20 -to DATOS[5]
+set_location_assignment PIN_K21 -to DATOS[6]
+set_location_assignment PIN_K22 -to DATOS[7]
+set_location_assignment PIN_M20 -to RS
+set_location_assignment PIN_M21 -to RW
+set_location_assignment PIN_N21 -to E
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
