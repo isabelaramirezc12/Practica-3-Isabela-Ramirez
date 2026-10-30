@@ -1,0 +1,7 @@
+
+State Machine - |Ejercicio_10|Prstate
+Name Prstate.S3 Prstate.S2 Prstate.S1 Prstate.S0 
+Prstate.S0 0 0 0 0 
+Prstate.S1 0 0 1 1 
+Prstate.S2 0 1 0 1 
+Prstate.S3 1 0 0 1 

@@ -1,0 +1,27 @@
+//Flip-flop T hecho con flip-flop D y compuertas
+// Un flip-flop T = alterna en cada flanco de subida del reloj:
+//   - Si T = 0: la salida queda igual
+//   - Si T = 1: la salida se invierte
+
+module Ejercicio_6 (oQ, iT, iCLK, iRST);
+output oQ;							// oQ = LED
+input iT,iCLK,iRST;					// Entradas: iT = alternar o no, iCLK = RELOJ, iRST = RESET
+wire DT;							
+assign DT = oQ ^ iT;				//Si iT = 0, DT = oQ (el mismo valor)
+										// si iT = 1, DT =/ oQ
+D_FF D1 (oQ,DT,iCLK,iRST);			
+									// Pone un flip-flop D llamado D1 y lo conecta en orden:
+									// Q con oQ, D con DT, CLK con iCLK, RST con iRST
+endmodule							// Fin del flip-flop T
+
+//Flip-flop D
+//flip-flop D con reset asíncrono (El mismo del ejercicio 5)
+module D_FF (Q, D, CLK, RST);		
+output reg Q;						// Q es la salida y guarda su valor
+input D,CLK,RST;					// Entradas: dato, reloj y reset
+always @ (posedge CLK or negedge RST)	// Se activa cuando el reloj sube o cuando el reset baja
+if (~RST) Q = 1'b0;					// reset = 0: la salida se borra (0), sino el flanco del reloj, Q copia a D
+else Q = D;						
+endmodule							
+
+

@@ -1,0 +1,23 @@
+//Descripción funcional de flip-flop JK a partir de su tabla característica 
+//circuito armado a partir de la descripción de su funcionamiento fila por fila de la tabla característica
+
+module Ejercicio_8 (iJ, iK, iCLK, oQ, oQnot);
+	output oQ,oQnot; 					// Salidas: oQ (el valor guardado) y oQnot (contrario de oQ)
+	input iJ,iK,iCLK; 					// Entradas: iJ = "prende", iK = "apaga", iCLK = RELOJ (no tiene reset)
+	reg oQ; 							// oQ = "reg": guarda su valor entre flancos del reloj
+	assign oQnot = ~oQ; 				// oQnot = contrario de oQ
+										// permanente: cambia al mismo tiempo que oQ, sin esperar al reloj.
+	always @ (posedge iCLK) 			// El bloque se activa solo en el flanco de subida del reloj
+		case ({iJ,iK}) 					// coloca J y K en un número de 2 bits (J a la izquierda, K a la derecha)
+										
+			2'b00: oQ = oQ; 			// J=0, K=0: se mantiene
+			2'b01: oQ = 1'b0; 			// J=0, K=1: se pone en 0 (reset)
+			2'b10: oQ = 1'b1; 			// J=1, K=0: se pone en 1 (set)
+			2'b11: oQ = ~oQ; 			// J=1, K=1: se invierte (toggle)
+		endcase 					
+endmodule			
+
+
+
+
+					

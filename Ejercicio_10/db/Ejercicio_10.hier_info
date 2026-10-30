@@ -1,0 +1,11 @@
+|Ejercicio_10
+ix => Nxtstate.S1.DATAB
+ix => Nxtstate.S3.DATAB
+ix => Selector0.IN1
+ix => Selector1.IN3
+ix => Prstate.S0.DATAIN
+oy << Selector1.DB_MAX_OUTPUT_PORT_TYPE
+iCLK => Prstate~1.DATAIN
+iRST => Prstate~3.DATAIN
+
+
