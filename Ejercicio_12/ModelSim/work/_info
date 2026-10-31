@@ -1,0 +1,65 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Practica-3-Isabela-Ramirez\Ejercicio_2\Simulación ModelSim
+vEjercicio_12
+!i10b 1
+Z1 !s100 [GR1deQU:3@cOaVh;=Jn=1
+Z2 IPZ`0IcQKKMRMZnAHiaf`I3
+Z3 Vze_^Ndb8W7eWLO7SJ<8f^1
+Z4 dC:\Practica-3-Isabela-Ramirez\Ejercicio_12\ModelSim
+Z5 w1793415793
+Z6 8C:/Practica-3-Isabela-Ramirez/Ejercicio_12/Ejercicio_12.v
+Z7 FC:/Practica-3-Isabela-Ramirez/Ejercicio_12/Ejercicio_12.v
+L0 5
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z9 !s108 1793415954.471000
+Z10 !s107 C:/Practica-3-Isabela-Ramirez/Ejercicio_12/Ejercicio_12.v|
+Z11 !s90 -reportprogress|300|-work|work|C:/Practica-3-Isabela-Ramirez/Ejercicio_12/Ejercicio_12.v|
+!s101 -O0
+Z12 o-work work -O0
+Z13 n@ejercicio_12
+vT_FF
+!i10b 1
+Z14 !s100 jS]kAeTPTj5:ZPROWT<;g1
+Z15 I@921Z@U2J96i=CS8M5=G_2
+Z16 VhC2ldES=7hMER]e_ccJgz2
+R4
+R5
+R6
+R7
+L0 24
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z17 n@t_@f@f
+vtestTcircuit
+!i10b 1
+!s100 40ki_IaJfh432zBG=j4IO0
+IJbfIXX5ID?QGbL`LLhQ_^1
+Z18 VROAo>5h7_`jjETWnN_iP40
+R4
+R5
+R6
+R7
+L0 35
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z19 ntest@tcircuit

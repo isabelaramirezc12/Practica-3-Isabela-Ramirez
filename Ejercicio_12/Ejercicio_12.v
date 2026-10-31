@@ -38,7 +38,7 @@ module testTcircuit;
 	wire y,A,B;			// salidas "wire" porque solo se observan	
 								
  
-	Tcircuit TC (x,y,A,B,CLK,RST);		//se crea un ejemplar del circuito que Conecta el circuito a probar con las señales de prueba
+	Ejercicio_12 TC (x,y,A,B,CLK,RST);		//se crea un ejemplar del circuito que Conecta el circuito a probar con las señales de prueba
 										
  // bloque que genera el reset y el reloj
 	initial 						

@@ -9,4 +9,4 @@ Código y Pin-planner
 ![alt text](image-3.png)
 
 
-[⋆Da click aquí para acceder al video con la sustentación⋆]()
+[⋆Da click aquí para acceder al video con la sustentación⋆](https://youtube.com/shorts/1rRu90pHLBM?si=sfYcl4PDj1BiC_wW)

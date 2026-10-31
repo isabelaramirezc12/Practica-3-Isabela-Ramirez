@@ -18,4 +18,4 @@ Código y Pin-planner
 
 ![alt text](image-8.png)
 
-[⋆Da click aquí para acceder al video con la sustentación⋆]()
+[⋆Da click aquí para acceder al video con la sustentación⋆](https://youtube.com/shorts/Jur_OV6krns?si=z8lSZnHVY92QyxYK)
